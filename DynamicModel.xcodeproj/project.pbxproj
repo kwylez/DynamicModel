@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010EC11C142B764200E18B0C /* NSObject+IVarForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 010EC11B142B764200E18B0C /* NSObject+IVarForKey.m */; };
+		010EC11F142B816000E18B0C /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = 010EC11E142B816000E18B0C /* models.json */; };
+		010EC126142BA89500E18B0C /* ModelContentDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */; };
+		011D5B10144DAC720098174C /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 011D5B0F144DAC720098174C /* events.json */; };
+		015C0933142A285000F5DBCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015C0932142A285000F5DBCD /* UIKit.framework */; };
+		015C0935142A285000F5DBCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015C0934142A285000F5DBCD /* Foundation.framework */; };
+		015C0937142A285000F5DBCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015C0936142A285000F5DBCD /* CoreGraphics.framework */; };
+		015C093D142A285000F5DBCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 015C093B142A285000F5DBCD /* InfoPlist.strings */; };
+		015C093F142A285000F5DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 015C093E142A285000F5DBCD /* main.m */; };
+		015C0943142A285000F5DBCD /* CWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 015C0942142A285000F5DBCD /* CWAppDelegate.m */; };
+		015C0946142A285000F5DBCD /* CWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015C0945142A285000F5DBCD /* CWViewController.m */; };
+		015C0949142A285000F5DBCD /* CWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015C0947142A285000F5DBCD /* CWViewController.xib */; };
+		01A9C9F61436117200689465 /* CWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A9C9F41436117200689465 /* CWDetailViewController.m */; };
+		01A9C9F71436117200689465 /* CWDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A9C9F51436117200689465 /* CWDetailViewController.xib */; };
+		01D007ED142CFC4100750D93 /* CWListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D007EB142CFC4100750D93 /* CWListViewController.m */; };
+		01D007EE142CFC4100750D93 /* CWListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D007EC142CFC4100750D93 /* CWListViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		010EC11A142B764200E18B0C /* NSObject+IVarForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IVarForKey.h"; sourceTree = "<group>"; };
+		010EC11B142B764200E18B0C /* NSObject+IVarForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IVarForKey.m"; sourceTree = "<group>"; };
+		010EC11E142B816000E18B0C /* models.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = models.json; sourceTree = "<group>"; };
+		010EC124142BA89500E18B0C /* ModelContentDefaultManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContentDefaultManager.h; sourceTree = "<group>"; };
+		010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelContentDefaultManager.m; sourceTree = "<group>"; };
+		011D5B0F144DAC720098174C /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		015C092E142A285000F5DBCD /* DynamicModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		015C0932142A285000F5DBCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		015C0934142A285000F5DBCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		015C0936142A285000F5DBCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		015C093A142A285000F5DBCD /* DynamicModel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicModel-Info.plist"; sourceTree = "<group>"; };
+		015C093C142A285000F5DBCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		015C093E142A285000F5DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		015C0940142A285000F5DBCD /* DynamicModel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicModel-Prefix.pch"; sourceTree = "<group>"; };
+		015C0941142A285000F5DBCD /* CWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWAppDelegate.h; sourceTree = "<group>"; };
+		015C0942142A285000F5DBCD /* CWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWAppDelegate.m; sourceTree = "<group>"; };
+		015C0944142A285000F5DBCD /* CWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWViewController.h; sourceTree = "<group>"; };
+		015C0945142A285000F5DBCD /* CWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWViewController.m; sourceTree = "<group>"; };
+		015C0948142A285000F5DBCD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CWViewController.xib; sourceTree = "<group>"; };
+		01A9C9F31436117200689465 /* CWDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDetailViewController.h; sourceTree = "<group>"; };
+		01A9C9F41436117200689465 /* CWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDetailViewController.m; sourceTree = "<group>"; };
+		01A9C9F51436117200689465 /* CWDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CWDetailViewController.xib; sourceTree = "<group>"; };
+		01D007EA142CFC4100750D93 /* CWListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWListViewController.h; sourceTree = "<group>"; };
+		01D007EB142CFC4100750D93 /* CWListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWListViewController.m; sourceTree = "<group>"; };
+		01D007EC142CFC4100750D93 /* CWListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CWListViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		015C092B142A285000F5DBCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				015C0933142A285000F5DBCD /* UIKit.framework in Frameworks */,
+				015C0935142A285000F5DBCD /* Foundation.framework in Frameworks */,
+				015C0937142A285000F5DBCD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		015C0923142A284F00F5DBCD = {
+			isa = PBXGroup;
+			children = (
+				015C0938142A285000F5DBCD /* DynamicModel */,
+				015C0931142A285000F5DBCD /* Frameworks */,
+				015C092F142A285000F5DBCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		015C092F142A285000F5DBCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				015C092E142A285000F5DBCD /* DynamicModel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		015C0931142A285000F5DBCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				015C0932142A285000F5DBCD /* UIKit.framework */,
+				015C0934142A285000F5DBCD /* Foundation.framework */,
+				015C0936142A285000F5DBCD /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		015C0938142A285000F5DBCD /* DynamicModel */ = {
+			isa = PBXGroup;
+			children = (
+				015C0941142A285000F5DBCD /* CWAppDelegate.h */,
+				015C0942142A285000F5DBCD /* CWAppDelegate.m */,
+				015C0944142A285000F5DBCD /* CWViewController.h */,
+				015C0945142A285000F5DBCD /* CWViewController.m */,
+				015C0947142A285000F5DBCD /* CWViewController.xib */,
+				015C0939142A285000F5DBCD /* Supporting Files */,
+				010EC11A142B764200E18B0C /* NSObject+IVarForKey.h */,
+				010EC11B142B764200E18B0C /* NSObject+IVarForKey.m */,
+				010EC11E142B816000E18B0C /* models.json */,
+				010EC124142BA89500E18B0C /* ModelContentDefaultManager.h */,
+				010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */,
+				01D007EA142CFC4100750D93 /* CWListViewController.h */,
+				01D007EB142CFC4100750D93 /* CWListViewController.m */,
+				01D007EC142CFC4100750D93 /* CWListViewController.xib */,
+				01A9C9F31436117200689465 /* CWDetailViewController.h */,
+				01A9C9F41436117200689465 /* CWDetailViewController.m */,
+				01A9C9F51436117200689465 /* CWDetailViewController.xib */,
+				011D5B0F144DAC720098174C /* events.json */,
+			);
+			path = DynamicModel;
+			sourceTree = "<group>";
+		};
+		015C0939142A285000F5DBCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				015C093A142A285000F5DBCD /* DynamicModel-Info.plist */,
+				015C093B142A285000F5DBCD /* InfoPlist.strings */,
+				015C093E142A285000F5DBCD /* main.m */,
+				015C0940142A285000F5DBCD /* DynamicModel-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		015C092D142A285000F5DBCD /* DynamicModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 015C094C142A285000F5DBCD /* Build configuration list for PBXNativeTarget "DynamicModel" */;
+			buildPhases = (
+				015C092A142A285000F5DBCD /* Sources */,
+				015C092B142A285000F5DBCD /* Frameworks */,
+				015C092C142A285000F5DBCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicModel;
+			productName = DynamicModel;
+			productReference = 015C092E142A285000F5DBCD /* DynamicModel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		015C0925142A284F00F5DBCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = VW;
+			};
+			buildConfigurationList = 015C0928142A284F00F5DBCD /* Build configuration list for PBXProject "DynamicModel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 015C0923142A284F00F5DBCD;
+			productRefGroup = 015C092F142A285000F5DBCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				015C092D142A285000F5DBCD /* DynamicModel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		015C092C142A285000F5DBCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				015C093D142A285000F5DBCD /* InfoPlist.strings in Resources */,
+				015C0949142A285000F5DBCD /* CWViewController.xib in Resources */,
+				010EC11F142B816000E18B0C /* models.json in Resources */,
+				01D007EE142CFC4100750D93 /* CWListViewController.xib in Resources */,
+				01A9C9F71436117200689465 /* CWDetailViewController.xib in Resources */,
+				011D5B10144DAC720098174C /* events.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		015C092A142A285000F5DBCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				015C093F142A285000F5DBCD /* main.m in Sources */,
+				015C0943142A285000F5DBCD /* CWAppDelegate.m in Sources */,
+				015C0946142A285000F5DBCD /* CWViewController.m in Sources */,
+				010EC11C142B764200E18B0C /* NSObject+IVarForKey.m in Sources */,
+				010EC126142BA89500E18B0C /* ModelContentDefaultManager.m in Sources */,
+				01D007ED142CFC4100750D93 /* CWListViewController.m in Sources */,
+				01A9C9F61436117200689465 /* CWDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		015C093B142A285000F5DBCD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				015C093C142A285000F5DBCD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		015C0947142A285000F5DBCD /* CWViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				015C0948142A285000F5DBCD /* en */,
+			);
+			name = CWViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		015C094A142A285000F5DBCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		015C094B142A285000F5DBCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		015C094D142A285000F5DBCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicModel/DynamicModel-Prefix.pch";
+				INFOPLIST_FILE = "DynamicModel/DynamicModel-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		015C094E142A285000F5DBCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicModel/DynamicModel-Prefix.pch";
+				INFOPLIST_FILE = "DynamicModel/DynamicModel-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		015C0928142A284F00F5DBCD /* Build configuration list for PBXProject "DynamicModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015C094A142A285000F5DBCD /* Debug */,
+				015C094B142A285000F5DBCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		015C094C142A285000F5DBCD /* Build configuration list for PBXNativeTarget "DynamicModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015C094D142A285000F5DBCD /* Debug */,
+				015C094E142A285000F5DBCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 015C0925142A284F00F5DBCD /* Project object */;
+}
