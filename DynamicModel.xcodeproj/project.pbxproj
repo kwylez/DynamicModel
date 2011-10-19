@@ -65,6 +65,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01257BA7144F64520082FFD5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				015C0944142A285000F5DBCD /* CWViewController.h */,
+				015C0945142A285000F5DBCD /* CWViewController.m */,
+				01D007EA142CFC4100750D93 /* CWListViewController.h */,
+				01D007EB142CFC4100750D93 /* CWListViewController.m */,
+				01A9C9F31436117200689465 /* CWDetailViewController.h */,
+				01A9C9F41436117200689465 /* CWDetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		01257BA8144F64640082FFD5 /* Models and Managers */ = {
+			isa = PBXGroup;
+			children = (
+				010EC11E142B816000E18B0C /* models.json */,
+				010EC124142BA89500E18B0C /* ModelContentDefaultManager.h */,
+				010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */,
+			);
+			name = "Models and Managers";
+			sourceTree = "<group>";
+		};
+		01257BA9144F647C0082FFD5 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				015C0947142A285000F5DBCD /* CWViewController.xib */,
+				01D007EC142CFC4100750D93 /* CWListViewController.xib */,
+				01A9C9F51436117200689465 /* CWDetailViewController.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		01257BAA144F64890082FFD5 /* Categories and Utils */ = {
+			isa = PBXGroup;
+			children = (
+				010EC11A142B764200E18B0C /* NSObject+IVarForKey.h */,
+				010EC11B142B764200E18B0C /* NSObject+IVarForKey.m */,
+			);
+			name = "Categories and Utils";
+			sourceTree = "<group>";
+		};
 		015C0923142A284F00F5DBCD = {
 			isa = PBXGroup;
 			children = (
@@ -97,21 +139,11 @@
 			children = (
 				015C0941142A285000F5DBCD /* CWAppDelegate.h */,
 				015C0942142A285000F5DBCD /* CWAppDelegate.m */,
-				015C0944142A285000F5DBCD /* CWViewController.h */,
-				015C0945142A285000F5DBCD /* CWViewController.m */,
-				015C0947142A285000F5DBCD /* CWViewController.xib */,
+				01257BA7144F64520082FFD5 /* Controllers */,
+				01257BA9144F647C0082FFD5 /* XIBs */,
 				015C0939142A285000F5DBCD /* Supporting Files */,
-				010EC11A142B764200E18B0C /* NSObject+IVarForKey.h */,
-				010EC11B142B764200E18B0C /* NSObject+IVarForKey.m */,
-				010EC11E142B816000E18B0C /* models.json */,
-				010EC124142BA89500E18B0C /* ModelContentDefaultManager.h */,
-				010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */,
-				01D007EA142CFC4100750D93 /* CWListViewController.h */,
-				01D007EB142CFC4100750D93 /* CWListViewController.m */,
-				01D007EC142CFC4100750D93 /* CWListViewController.xib */,
-				01A9C9F31436117200689465 /* CWDetailViewController.h */,
-				01A9C9F41436117200689465 /* CWDetailViewController.m */,
-				01A9C9F51436117200689465 /* CWDetailViewController.xib */,
+				01257BAA144F64890082FFD5 /* Categories and Utils */,
+				01257BA8144F64640082FFD5 /* Models and Managers */,
 			);
 			path = DynamicModel;
 			sourceTree = "<group>";
