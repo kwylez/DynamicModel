@@ -14,6 +14,7 @@
 @synthesize heading;
 @synthesize titleProp;
 @synthesize subheading;
+@synthesize dismissButton;
 @synthesize dynObj;
 
 - (void)dealloc {
@@ -22,6 +23,7 @@
   [titleProp release];
   [subheading release];
   [dynObj release];
+  [dismissButton release];
   [super dealloc];
 }
 
@@ -65,9 +67,16 @@
 
   [super viewDidUnload];
   
-  self.heading    = nil;
-  self.titleProp  = nil;
-  self.subheading = nil;
+  self.heading       = nil;
+  self.titleProp     = nil;
+  self.subheading    = nil;
+  self.dismissButton = nil;
+}
+
+#pragma mark - Public Methods
+
+- (IBAction)dismissView:(id)sender {
+  [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
