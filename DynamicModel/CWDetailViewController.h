@@ -17,12 +17,16 @@
   UILabel *titleProp;
   UILabel *heading;
   UILabel *subheading;
+  UIBarButtonItem *dismissButton;
   id dynObj;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *titleProp;
 @property (nonatomic, retain) IBOutlet UILabel *heading;
 @property (nonatomic, retain) IBOutlet UILabel *subheading;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *dismissButton;
 @property (nonatomic, retain) id dynObj;
+
+- (IBAction)dismissView:(id)sender;
 
 @end
