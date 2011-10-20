@@ -1,0 +1,23 @@
+{
+  "responseStatus" : "Success",
+  "responseMessag" : "You are good to go",
+  "responseObject" : { "className" : "Event" , 
+                       "properties" : ["name", 
+                                       "desc",
+                                       "owner", 
+                                       "startdate", 
+                                       "room"],
+                       "listProps" : ["name", "desc"],
+                       "detailProps" : ["name","desc","room"],
+                       "keyValues" : [{"name" : "Cory D. Wiles", 
+                                      "desc" : "Memphis Mobile Conference", 
+                                      "owner" : "Jane Doe", 
+                                      "startdate" : "2011-10-18",
+                                      "room" : "ABC12"}, 
+                                      {"name" : "Erin M. Wiles", 
+                                      "desc" : "WWDC", 
+                                      "owner" : "Steve Jobs", 
+                                      "startdate" : "2012-02-03",
+                                      "room" : "DEF34"}]
+  }                                         
+}

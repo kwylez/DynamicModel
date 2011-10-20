@@ -1,0 +1,23 @@
+{
+  "responseStatus" : "Success",
+  "responseMessag" : "You are good to go",
+  "responseObject" : { "className" : "Employee" , 
+                       "properties" : ["name", 
+                                       "contact",
+                                       "addr1", 
+                                       "prop1", 
+                                       "prop2"],
+                        "listProps" : ["addr1", "contact"],
+                        "detailProps" : ["name","contact","addr1"],
+                        "keyValues" : [{"addr1" : "Harbin", 
+                                        "name" : "Cory D. Wiles", 
+                                        "contact" : "john@web.com", 
+                                        "prop1" : "prop1value", 
+                                        "prop2" : "prop2valuea"}, 
+                                       {"addr1" : "Ashlawn", 
+                                        "name" : "Erin M. Wiles", 
+                                        "contact" : "jane@web.com", 
+                                        "prop1" : "prop1value", 
+                                        "prop2" : "prop2valueb"}]
+  }                                         
+}
