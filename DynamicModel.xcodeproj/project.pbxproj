@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010EC11C142B764200E18B0C /* NSObject+IVarForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 010EC11B142B764200E18B0C /* NSObject+IVarForKey.m */; };
-		010EC11F142B816000E18B0C /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = 010EC11E142B816000E18B0C /* models.json */; };
+		010EC11F142B816000E18B0C /* employees.json in Resources */ = {isa = PBXBuildFile; fileRef = 010EC11E142B816000E18B0C /* employees.json */; };
 		010EC126142BA89500E18B0C /* ModelContentDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */; };
 		015C0933142A285000F5DBCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015C0932142A285000F5DBCD /* UIKit.framework */; };
 		015C0935142A285000F5DBCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015C0934142A285000F5DBCD /* Foundation.framework */; };
@@ -22,12 +22,13 @@
 		01A9C9F71436117200689465 /* CWDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A9C9F51436117200689465 /* CWDetailViewController.xib */; };
 		01D007ED142CFC4100750D93 /* CWListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D007EB142CFC4100750D93 /* CWListViewController.m */; };
 		01D007EE142CFC4100750D93 /* CWListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D007EC142CFC4100750D93 /* CWListViewController.xib */; };
+		01F92436144FB409009FD279 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 01F92435144FB409009FD279 /* events.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		010EC11A142B764200E18B0C /* NSObject+IVarForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IVarForKey.h"; sourceTree = "<group>"; };
 		010EC11B142B764200E18B0C /* NSObject+IVarForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IVarForKey.m"; sourceTree = "<group>"; };
-		010EC11E142B816000E18B0C /* models.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = models.json; sourceTree = "<group>"; };
+		010EC11E142B816000E18B0C /* employees.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = employees.json; sourceTree = "<group>"; };
 		010EC124142BA89500E18B0C /* ModelContentDefaultManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContentDefaultManager.h; sourceTree = "<group>"; };
 		010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelContentDefaultManager.m; sourceTree = "<group>"; };
 		015C092E142A285000F5DBCD /* DynamicModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +50,7 @@
 		01D007EA142CFC4100750D93 /* CWListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWListViewController.h; sourceTree = "<group>"; };
 		01D007EB142CFC4100750D93 /* CWListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWListViewController.m; sourceTree = "<group>"; };
 		01D007EC142CFC4100750D93 /* CWListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CWListViewController.xib; sourceTree = "<group>"; };
+		01F92435144FB409009FD279 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,10 @@
 		01257BA8144F64640082FFD5 /* Models and Managers */ = {
 			isa = PBXGroup;
 			children = (
-				010EC11E142B816000E18B0C /* models.json */,
+				010EC11E142B816000E18B0C /* employees.json */,
 				010EC124142BA89500E18B0C /* ModelContentDefaultManager.h */,
 				010EC125142BA89500E18B0C /* ModelContentDefaultManager.m */,
+				01F92435144FB409009FD279 /* events.json */,
 			);
 			name = "Models and Managers";
 			sourceTree = "<group>";
@@ -137,11 +140,11 @@
 		015C0938142A285000F5DBCD /* DynamicModel */ = {
 			isa = PBXGroup;
 			children = (
+				015C0939142A285000F5DBCD /* Supporting Files */,
 				015C0941142A285000F5DBCD /* CWAppDelegate.h */,
 				015C0942142A285000F5DBCD /* CWAppDelegate.m */,
 				01257BA7144F64520082FFD5 /* Controllers */,
 				01257BA9144F647C0082FFD5 /* XIBs */,
-				015C0939142A285000F5DBCD /* Supporting Files */,
 				01257BAA144F64890082FFD5 /* Categories and Utils */,
 				01257BA8144F64640082FFD5 /* Models and Managers */,
 			);
@@ -212,9 +215,10 @@
 			files = (
 				015C093D142A285000F5DBCD /* InfoPlist.strings in Resources */,
 				015C0949142A285000F5DBCD /* CWViewController.xib in Resources */,
-				010EC11F142B816000E18B0C /* models.json in Resources */,
+				010EC11F142B816000E18B0C /* employees.json in Resources */,
 				01D007EE142CFC4100750D93 /* CWListViewController.xib in Resources */,
 				01A9C9F71436117200689465 /* CWDetailViewController.xib in Resources */,
+				01F92436144FB409009FD279 /* events.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
