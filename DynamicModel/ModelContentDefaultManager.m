@@ -51,7 +51,8 @@ static ModelContentDefaultManager *shared = nil;
   
   if (__modelData == nil) {
 
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:kModelJsonFile ofType:@"json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:kModelJsonFile 
+                                                         ofType:@"json"];
     NSError  *error;
     
     __modelData = [[[NSString alloc] initWithContentsOfFile:filePath 
