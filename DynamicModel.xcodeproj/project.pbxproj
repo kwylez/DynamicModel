@@ -16,7 +16,6 @@
 		015C093D142A285000F5DBCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 015C093B142A285000F5DBCD /* InfoPlist.strings */; };
 		015C093F142A285000F5DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 015C093E142A285000F5DBCD /* main.m */; };
 		015C0943142A285000F5DBCD /* CWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 015C0942142A285000F5DBCD /* CWAppDelegate.m */; };
-		015C0946142A285000F5DBCD /* CWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015C0945142A285000F5DBCD /* CWViewController.m */; };
 		015C0949142A285000F5DBCD /* CWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015C0947142A285000F5DBCD /* CWViewController.xib */; };
 		01A9C9F61436117200689465 /* CWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A9C9F41436117200689465 /* CWDetailViewController.m */; };
 		01A9C9F71436117200689465 /* CWDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A9C9F51436117200689465 /* CWDetailViewController.xib */; };
@@ -41,8 +40,6 @@
 		015C0940142A285000F5DBCD /* DynamicModel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicModel-Prefix.pch"; sourceTree = "<group>"; };
 		015C0941142A285000F5DBCD /* CWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWAppDelegate.h; sourceTree = "<group>"; };
 		015C0942142A285000F5DBCD /* CWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWAppDelegate.m; sourceTree = "<group>"; };
-		015C0944142A285000F5DBCD /* CWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWViewController.h; sourceTree = "<group>"; };
-		015C0945142A285000F5DBCD /* CWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWViewController.m; sourceTree = "<group>"; };
 		015C0948142A285000F5DBCD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CWViewController.xib; sourceTree = "<group>"; };
 		01A9C9F31436117200689465 /* CWDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDetailViewController.h; sourceTree = "<group>"; };
 		01A9C9F41436117200689465 /* CWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDetailViewController.m; sourceTree = "<group>"; };
@@ -70,8 +67,6 @@
 		01257BA7144F64520082FFD5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				015C0944142A285000F5DBCD /* CWViewController.h */,
-				015C0945142A285000F5DBCD /* CWViewController.m */,
 				01D007EA142CFC4100750D93 /* CWListViewController.h */,
 				01D007EB142CFC4100750D93 /* CWListViewController.m */,
 				01A9C9F31436117200689465 /* CWDetailViewController.h */,
@@ -231,7 +226,6 @@
 			files = (
 				015C093F142A285000F5DBCD /* main.m in Sources */,
 				015C0943142A285000F5DBCD /* CWAppDelegate.m in Sources */,
-				015C0946142A285000F5DBCD /* CWViewController.m in Sources */,
 				010EC11C142B764200E18B0C /* NSObject+IVarForKey.m in Sources */,
 				010EC126142BA89500E18B0C /* ModelContentDefaultManager.m in Sources */,
 				01D007ED142CFC4100750D93 /* CWListViewController.m in Sources */,
