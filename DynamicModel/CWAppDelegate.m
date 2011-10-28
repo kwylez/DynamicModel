@@ -7,8 +7,6 @@
 //
 
 #import "CWAppDelegate.h"
-
-#import "CWViewController.h"
 #import "CWListViewController.h"
 
 @implementation CWAppDelegate
