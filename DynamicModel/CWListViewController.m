@@ -11,46 +11,39 @@
 @implementation CWListViewController
 
 @synthesize objectList;
+@synthesize jsonObjectAsDictionary;
 
 - (void)dealloc {
   [objectList release];
+  [jsonObjectAsDictionary release];
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
 }
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)viewDidLoad {
+
+  [super viewDidLoad];
   
-  self.objectList = [[NSMutableArray alloc] init];
+  self.objectList             = [[NSMutableArray alloc] init];
+  self.jsonObjectAsDictionary = [NSDictionary dictionary];
   
   NSError *error;
-  NSString *jsonString = [[ModelContentDefaultManager defaultManager] loadContentFile];
+  NSString *jsonString     = [[ModelContentDefaultManager defaultManager] loadContentFile];
+  NSData *jsonStringAsData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
   
-  NSData *jsonStringAsData  = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
   /**
    * Serialization will return either dictionary or array
    */
   NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:jsonStringAsData 
                                                               options:NSJSONReadingMutableContainers 
                                                                 error:&error];
+  
+  self.jsonObjectAsDictionary = (NSDictionary *)json;
   
   const char *classChar = [[[json objectForKey:@"responseObject"] objectForKey:@"className"] UTF8String];
   
@@ -141,16 +134,8 @@
     cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
   }
 
-  NSError *error;
-  NSString *jsonString = [[ModelContentDefaultManager defaultManager] loadContentFile];
-	
-  NSData *jsonStringAsData  = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-  NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:jsonStringAsData 
-                                                            options:NSJSONReadingMutableContainers 
-                                                              error:&error];
-
-  const char *titleProperty    = [[[[json objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:0] UTF8String];
-  const char *subtitleProperty = [[[[json objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:1] UTF8String];
+  const char *titleProperty    = [[[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:0] UTF8String];
+  const char *subtitleProperty = [[[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:1] UTF8String];
 
   id dynaObject = [self.objectList objectAtIndex:indexPath.row];
 

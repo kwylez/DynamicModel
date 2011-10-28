@@ -15,9 +15,11 @@
 
 @interface CWListViewController : UITableViewController {
   NSMutableArray *objectList;
+  NSDictionary *jsonObjectAsDictionary;
 }
 
 @property (nonatomic, retain) NSMutableArray *objectList;
+@property (nonatomic, copy) NSDictionary *jsonObjectAsDictionary;
 
 @end
 
