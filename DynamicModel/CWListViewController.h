@@ -11,7 +11,8 @@
 #include <objc/message.h>
 #import "ModelContentDefaultManager.h"
 #import "CWDetailViewController.h"
-
+#import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
 
 @interface CWListViewController : UITableViewController {
   NSMutableArray *objectList;
