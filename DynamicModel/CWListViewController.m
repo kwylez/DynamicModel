@@ -18,7 +18,6 @@
   [jsonObjectAsDictionary release];
 }
 
-
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
 }
@@ -31,87 +30,94 @@
   
   self.objectList             = [[NSMutableArray alloc] init];
   self.jsonObjectAsDictionary = [NSDictionary dictionary];
-  
-  NSError *error;
-  NSString *jsonString     = [[ModelContentDefaultManager defaultManager] loadContentFile];
-  NSData *jsonStringAsData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-  
-  /**
-   * Serialization will return either dictionary or array
-   */
-  NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:jsonStringAsData 
-                                                              options:NSJSONReadingMutableContainers 
-                                                                error:&error];
-  
-  self.jsonObjectAsDictionary = (NSDictionary *)json;
-  
-  const char *classChar = [[[json objectForKey:@"responseObject"] objectForKey:@"className"] UTF8String];
-  
-  /**
-   * The class name defined in the 'className' node will be subclass of NSObject
-   */
-  Class dynaClass = objc_allocateClassPair([NSObject class], classChar, 0);
-  
-  /**
-   * Iterate through the list of properties and add them to the class definition
-   */
-  [[[json objectForKey:@"responseObject"] objectForKey:@"properties"] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {  
-    class_addIvar(dynaClass, [object UTF8String], sizeof(id), log2(sizeof(id)), "@");
-  }];
-  
-  /**
-   * Add dealloc method to the class so that all memory will be cleaned up
-   */
-  class_addMethod(dynaClass, @selector(dealloc), (IMP)myDeallocImplementation, "v@:");
-  class_addMethod(dynaClass, @selector(report), (IMP)ReportFunction, "v@:");
-  
-  /**
-   * The class is now made available to the application
-   */
-  objc_registerClassPair(dynaClass);
-  
-  /**
-   * Iterate through the attributes and their values for each 'instance' of Employee
-   */
-  [[[json objectForKey:@"responseObject"] objectForKey:@"keyValues"] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
 
-    id dynaObject = nil;
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kEmployeesEndPoint]];
+  
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    
+    NSLog(@"Name: %@", JSON);
+    
+    self.jsonObjectAsDictionary = (NSDictionary *)JSON;
+    
+    const char *classChar = [[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"className"] UTF8String];
     
     /**
-     * ::NOTE::
-     * I am hard coding this for demo purposes only. Really I should just pull 
-     * from the 'className' node
+     * The class name defined in the 'className' node will be subclass of NSObject
      */
-    dynaObject = [[NSClassFromString([[json objectForKey:@"responseObject"] objectForKey:@"className"]) alloc] init];
+    Class dynaClass = objc_allocateClassPair([NSObject class], classChar, 0);
     
     /**
-     * Get all dictionary keys as the property name
+     * Iterate through the list of properties and add them to the class definition
      */
-    NSArray *properties = [object allKeys];
-    
-    /**
-     * Iterate over all keys to set the key/value pairs for the properties
-     */
-    [properties enumerateObjectsUsingBlock:^(id propObject, NSUInteger idx, BOOL *stop) {
-      
-      id currentValue;
-      
-      object_getInstanceVariable(propObject, [propObject UTF8String], (void**)&currentValue);
-
-      [currentValue release];
-      
-      id newValue = nil;
-      
-      newValue = [[object objectForKey:propObject] copy];
-      
-      object_setInstanceVariable(dynaObject, [propObject UTF8String], newValue);    
+    [[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"properties"] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {  
+      class_addIvar(dynaClass, [object UTF8String], sizeof(id), log2(sizeof(id)), "@");
     }];
     
-    [self.objectList addObject:dynaObject];  
+    /**
+     * Add dealloc method to the class so that all memory will be cleaned up
+     */
+    class_addMethod(dynaClass, @selector(dealloc), (IMP)myDeallocImplementation, "v@:");
+    class_addMethod(dynaClass, @selector(report), (IMP)ReportFunction, "v@:");
     
-    [dynaObject release];
+    /**
+     * The class is now made available to the application
+     */
+    objc_registerClassPair(dynaClass);
+    
+    /**
+     * Iterate through the attributes and their values for each 'instance' of Employee
+     */
+    [[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"keyValues"] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
 
-  }];
+      id dynaObject = nil;
+      
+      /**
+       * ::NOTE::
+       * I am hard coding this for demo purposes only. Really I should just pull 
+       * from the 'className' node
+       */
+      dynaObject = [[NSClassFromString([[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"className"]) alloc] init];
+      
+      /**
+       * Get all dictionary keys as the property name
+       */
+      NSArray *properties = [object allKeys];
+      
+      /**
+       * Iterate over all keys to set the key/value pairs for the properties
+       */
+      [properties enumerateObjectsUsingBlock:^(id propObject, NSUInteger idx, BOOL *stop) {
+        
+        /**
+         * @todo
+         * This assumes that values are strings, arrays, dictionaries, etc.
+         * What about primatives?!
+         */
+        id currentValue;
+        
+        object_getInstanceVariable(propObject, [propObject UTF8String], (void**)&currentValue);
+
+        [currentValue release];
+        
+        id newValue = nil;
+        
+        newValue = [[object objectForKey:propObject] copy];
+        
+        object_setInstanceVariable(dynaObject, [propObject UTF8String], newValue);    
+      }];
+      
+      [self.objectList addObject:dynaObject];  
+      
+      [dynaObject release];
+    }];
+    
+    [self.tableView reloadData];
+    
+  } failure:nil];
+  
+  NSOperationQueue *queue = [[[NSOperationQueue alloc] init] autorelease];
+  
+  [queue addOperation:operation];
 }
 
 #pragma mark - Table view data source
@@ -134,19 +140,25 @@
     cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
   }
 
-  const char *titleProperty    = [[[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:0] UTF8String];
-  const char *subtitleProperty = [[[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:1] UTF8String];
+  if ([self.jsonObjectAsDictionary count] > 0) {
+    
+    const char *titleProperty    = [[[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:0] UTF8String];
+    const char *subtitleProperty = [[[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"listProps"] objectAtIndex:1] UTF8String];
 
-  id dynaObject = [self.objectList objectAtIndex:indexPath.row];
+    id dynaObject = [self.objectList objectAtIndex:indexPath.row];
 
-  id titlePropertyValue;
-  id subtitlePropertyValue;
+    id titlePropertyValue;
+    id subtitlePropertyValue;
 
-  object_getInstanceVariable(dynaObject, titleProperty, (void **)&titlePropertyValue);
-  object_getInstanceVariable(dynaObject, subtitleProperty, (void **)&subtitlePropertyValue);
+    object_getInstanceVariable(dynaObject, titleProperty, (void **)&titlePropertyValue);
+    object_getInstanceVariable(dynaObject, subtitleProperty, (void **)&subtitlePropertyValue);
 
-  cell.textLabel.text       = titlePropertyValue;
-  cell.detailTextLabel.text = subtitlePropertyValue;
+    cell.textLabel.text       = titlePropertyValue;
+    cell.detailTextLabel.text = subtitlePropertyValue;
+
+  } else {
+    cell.textLabel.text = @"No results found";
+  }
 
   return cell;
 }
