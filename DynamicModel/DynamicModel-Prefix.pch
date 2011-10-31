@@ -11,4 +11,7 @@
 #ifdef __OBJC__
   #import <UIKit/UIKit.h>
   #import <Foundation/Foundation.h>
+
+#define kEmployeesEndPoint @"http://kwylez.appspot.com/employees"
+#define kEventsEndPoint @"http://kwylez.appspot.com/events"
 #endif
