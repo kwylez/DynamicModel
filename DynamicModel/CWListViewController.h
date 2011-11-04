@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #include <objc/runtime.h>
 #include <objc/message.h>
-#import "ModelContentDefaultManager.h"
+
 #import "CWDetailViewController.h"
 
 

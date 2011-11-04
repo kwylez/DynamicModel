@@ -1,0 +1,6 @@
+[submodule "External-Resources"]
+	path = External-Resources
+	url = git://github.com/gowalla/AFNetworking.git
+[submodule "External-JSON"]
+	path = External-JSON
+	url = git://github.com/johnezang/JSONKit.git

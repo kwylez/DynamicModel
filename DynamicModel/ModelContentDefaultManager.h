@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-//#define kModelJsonFile @"employees"
-#define kModelJsonFile @"events"
+#define kModelJsonFile @"employees"
+//#define kModelJsonFile @"events"
 
 @interface ModelContentDefaultManager : NSObject {}
 

@@ -37,13 +37,8 @@
   
   [super viewDidLoad];
   
-  NSError *error;
-  NSString *jsonString = [[ModelContentDefaultManager defaultManager] loadContentFile];
+  NSDictionary *json = [NSDictionary dictionaryWithContentsOfJSONURLString:kEmployeesEndPoint];
   
-  NSData *jsonStringAsData  = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-  NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:jsonStringAsData 
-                                                              options:NSJSONReadingMutableContainers 
-                                                                error:&error];
   id titlePropertyValue      = nil;
   id headingPropertyValue    = nil;
   id subheadingPropertyValue = nil;
@@ -56,11 +51,13 @@
   object_getInstanceVariable(self.dynObj, headingProperty, (void **)&headingPropertyValue);
   object_getInstanceVariable(self.dynObj, subheadingProperty, (void **)&subheadingPropertyValue);
 
-  self.heading.text    = titlePropertyValue;
-  self.titleProp.text  = headingPropertyValue;
+  self.heading.text    = headingPropertyValue;
+  self.titleProp.text  = titlePropertyValue;
   self.subheading.text = subheadingPropertyValue;
   
-  [self.dynObj performSelector:@selector(report)];
+  if ([self.dynObj respondsToSelector:@selector(report)]) {
+    [self.dynObj performSelector:@selector(report)];
+  }
 }
 
 - (void)viewDidUnload {
