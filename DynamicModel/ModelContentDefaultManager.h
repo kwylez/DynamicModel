@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPClient.h"
-#import "AFHTTPRequestOperation.h"
 
-//#define kModelJsonFile @"employees"
-#define kModelJsonFile @"events"
+#define kModelJsonFile @"employees"
+//#define kModelJsonFile @"events"
 
 @interface ModelContentDefaultManager : NSObject {}
 
