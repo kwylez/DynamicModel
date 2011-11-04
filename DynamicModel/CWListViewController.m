@@ -28,16 +28,13 @@
 
   [super viewDidLoad];
   
-  self.objectList             = [[NSMutableArray alloc] init];
-  self.jsonObjectAsDictionary = [NSDictionary dictionary];
-
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kEmployeesEndPoint]];
+  self.objectList = [[NSMutableArray alloc] init];
   
-  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  self.jsonObjectAsDictionary = [NSDictionary dictionary];
+  
+  dispatch_async(kBgQueue, ^{
     
-    NSLog(@"Name: %@", JSON);
-    
-    self.jsonObjectAsDictionary = (NSDictionary *)JSON;
+    self.jsonObjectAsDictionary = [NSDictionary dictionaryWithContentsOfJSONURLString:kEmployeesEndPoint];
     
     const char *classChar = [[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"className"] UTF8String];
     
@@ -68,14 +65,9 @@
      * Iterate through the attributes and their values for each 'instance' of Employee
      */
     [[[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"keyValues"] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
-
-      id dynaObject = nil;
       
-      /**
-       * ::NOTE::
-       * I am hard coding this for demo purposes only. Really I should just pull 
-       * from the 'className' node
-       */
+      id dynaObject = nil;
+
       dynaObject = [[NSClassFromString([[self.jsonObjectAsDictionary objectForKey:@"responseObject"] objectForKey:@"className"]) alloc] init];
       
       /**
@@ -96,28 +88,29 @@
         id currentValue;
         
         object_getInstanceVariable(propObject, [propObject UTF8String], (void**)&currentValue);
-
+        
         [currentValue release];
         
         id newValue = nil;
         
         newValue = [[object objectForKey:propObject] copy];
         
-        object_setInstanceVariable(dynaObject, [propObject UTF8String], newValue);    
+        object_setInstanceVariable(dynaObject, [propObject UTF8String], newValue);
+        
+        [newValue release];
       }];
       
       [self.objectList addObject:dynaObject];  
       
       [dynaObject release];
     }];
-    
-    [self.tableView reloadData];
-    
-  } failure:nil];
-  
-  NSOperationQueue *queue = [[[NSOperationQueue alloc] init] autorelease];
-  
-  [queue addOperation:operation];
+    /**
+     * Reload table on main thread
+     */
+    dispatch_sync(dispatch_get_main_queue(), ^{
+      [self.tableView reloadData];
+    });
+  });
 }
 
 #pragma mark - Table view data source
